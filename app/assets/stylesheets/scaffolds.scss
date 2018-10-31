@@ -1,5 +1,9 @@
 body {
   background-color: #fff;
+  background-image: url("http://www.hdfondos.eu/pictures/2014/0805/1/orig_63754.jpg");
+  background-size: 100% ;
+    background-position: center top;
+
   color: #333;
   margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
@@ -21,9 +25,11 @@ pre {
 
 a {
   color: #000;
-
+  
+  border-style: dashed;
   &:visited {
     color: #666;
+    border-radius: 15px 50px 30px 5px;
   }
 
   &:hover {

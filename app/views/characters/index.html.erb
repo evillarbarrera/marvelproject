@@ -2,28 +2,29 @@
 
 <div class="container-fluid">
   
-  <div class="row">
+  <div class="row"  >
     <% @characters.each do |character| %>
       <%= link_to(details_path(:code => character['id'])) do%>
-      <div class="col-sm-4">
+      <div class="col-sm-6" background-color="lightblue">
           <div class="panel panel-default">
-            <div class="panel-heading text-center">
-              <img src="<%= character['thumbnail']['path']+"/standard_medium."+character['thumbnail']['extension'] %>" class="img-circle" alt="Cinque Terre">
-            </div>
-            <div class="panel-body">
-              <%= character['name'] %>
-            </div>
+          
+           
+              <img src="<%= character['thumbnail']['path']+"/standard_medium."+character['thumbnail']['extension'] %>" class="w3-circle" alt="Alps"> <p>
+            
+            
+            <p>
           </div>
       </div>
       <% end %>
     <% end %>
   </div>
 </div>
+<p>
 
 <ul class="pagination">
   <% (1 .. @paginas).each do |i| %>
     <li <%= if @numeroPag == i; "class=active"; end %>>
-      <%= link_to i, characters_path(:page => i) %>
+    <a>  <%= link_to i, characters_path(:page => i) %></a>
     </li>
   <% end %>
 </ul>
