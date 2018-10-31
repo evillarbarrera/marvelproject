@@ -48,6 +48,16 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  #Marvel
+
+ # gem 'pry'
+ # gem 'rspec'
+ # gem 'shoulda', '>= 0'
+ # gem 'rdoc', '~> 3.12'
+ # gem 'bundler', '~> 1.0'
+ # gem 'jeweler', '~> 1.8.7'
+
 end
 
 group :test do
@@ -56,7 +66,32 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+
+#Marvel
+
+  #gem 'rspec'
+  #gem 'webmock'
+  #gem 'coveralls', require: false
+  #gem 'simplecov', require: false
+  #gem 'guard-rspec', require: false
+
 end
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+#Consumir API
+
+gem 'rack-cors'
+gem 'active_model_serializers', '~> 0.10.0'
+gem 'faraday', '>= 0.7', '< 0.10'
+gem 'faraday_middleware', '>= 0.8', '< 0.10'
+gem 'hashie', '>= 0.4.0'
+
+
+gem 'whenever', require: false
+gem 'httparty'
+gem 'jquery-rails'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
