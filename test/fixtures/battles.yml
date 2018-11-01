@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  people: one
+  characters: one
+  date_fight: 2018-10-31 23:11:54
+  result: false
+
+two:
+  people: two
+  characters: two
+  date_fight: 2018-10-31 23:11:54
+  result: false

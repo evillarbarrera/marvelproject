@@ -21,24 +21,26 @@ class Character < ApplicationRecord
   def self.saveData
     #Para saber si contiene datos y si los posee los borra
     tabla = Character.count
-    if tabla > 0
-      Character.delete_all
-    end
+   # if tabla > 0
+   #  Character.delete_all
+   # end
     datos = []
     fin = getCantidadCharacter
     inicio = 0
     #La api permite obtener solo 100 registros por consulta
-    while inicio <= fin
-      response = getDataMarvel(inicio, 100)
-      datos= datos + response.parsed_response['data']['results']
-      inicio = inicio +100
-    end    
-    datos.each do |single|
-      character = Character.new
-      character.code = single['id']
-      character.name = single['name']
-      character.save
-    end
+    if tabla < 0
+      while inicio <= fin
+        response = getDataMarvel(inicio, 100)
+        datos= datos + response.parsed_response['data']['results']
+        inicio = inicio +100
+      end    
+      datos.each do |single|
+        character = Character.new
+        character.code = single['id']
+        character.name = single['name']
+        character.save
+      end
+    end 
   end
 
   def self.getCharacter(codigo)

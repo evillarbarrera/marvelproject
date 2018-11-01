@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_31_122024) do
+ActiveRecord::Schema.define(version: 2018_11_01_021154) do
+
+  create_table "battles", force: :cascade do |t|
+    t.integer "people_id"
+    t.integer "characters_id"
+    t.datetime "date_fight"
+    t.boolean "result"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["characters_id"], name: "index_battles_on_characters_id"
+    t.index ["people_id"], name: "index_battles_on_people_id"
+  end
 
   create_table "characters", force: :cascade do |t|
     t.integer "code"
