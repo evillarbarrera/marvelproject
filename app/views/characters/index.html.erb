@@ -21,10 +21,12 @@
 </div>
 <p>
 
+<div class ="container">
 <ul class="pagination">
   <% (1 .. @paginas).each do |i| %>
-    <li <%= if @numeroPag == i; "class=active"; end %>>
+    <li <%= if @numeroPag == i; "class=pagination"; end %>>
     <a>  <%= link_to i, characters_path(:page => i) %></a>
     </li>
   <% end %>
 </ul>
+</div>
