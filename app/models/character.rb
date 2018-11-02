@@ -34,12 +34,14 @@ class Character < ApplicationRecord
         datos= datos + response.parsed_response['data']['results']
         inicio = inicio +100
       end    
+      if tabla < 0
       datos.each do |single|
         character = Character.new
         character.code = single['id']
         character.name = single['name']
         character.save
       end
+    end
    
   end
 
