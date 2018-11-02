@@ -28,7 +28,7 @@ class Character < ApplicationRecord
     fin = getCantidadCharacter
     inicio = 0
     #La api permite obtener solo 100 registros por consulta
-    if tabla < 0
+   
       while inicio <= fin
         response = getDataMarvel(inicio, 100)
         datos= datos + response.parsed_response['data']['results']
@@ -40,7 +40,7 @@ class Character < ApplicationRecord
         character.name = single['name']
         character.save
       end
-    end 
+   
   end
 
   def self.getCharacter(codigo)
