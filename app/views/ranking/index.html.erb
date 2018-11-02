@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>RANKING PERSONAS</h1>
+
+<table class="w3-table-all">
+  <thead>
+    <tr>
+    	<th>Posicion</th>
+      <th>Nombre</th>
+      <th>Puntaje</th>
+      <th>Ganadas</th>
+      <th>Perdidas</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @people.each.with_index do |people, index| %>
+      <tr>
+      	<td><%= index +1 %></td>
+        <td><%= people.name %></td>
+        <td><%= people.point %></td>
+         <td><%= people.won_fight %></td>
+          <td><%= people.lost_fight %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,6 +1,7 @@
 class Battle < ApplicationRecord
   belongs_to :people , optional: true
   belongs_to :characters , optional: true
+	after_save :update_person_point
 
   def self.resultado
 		random_boolean = [true, false].sample
@@ -22,8 +23,26 @@ class Battle < ApplicationRecord
 	      code = code +1
 	    end
 		return code
-	
-		
   end
-  
+	
+
+	
+	def update_person_point
+		people = Person.find(self.people_id)
+		
+		if Battle.resultado
+			won = people.won_fight + 1
+			lost = people.lost_fight
+			point = people.point + 1
+		else
+			won = people.won_fight
+			lost = people.lost_fight + 1 
+			point = people.point - 1
+		end
+
+    people.update!(point: point, won_fight: won, lost_fight: lost )
+	end
+
+
+
 end

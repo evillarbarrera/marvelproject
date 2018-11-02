@@ -15,11 +15,6 @@
   <%= form.select :people_id, options_from_collection_for_select( Person.all, :id, :name) , class:"field-style field-split align-right"%>
   </div>
 
-  <div class="field">
-  <%= form.select :character_id, options_from_collection_for_select( Character.all, :id, :name) , class:"field-style field-split align-right"%>
-  </div>
-
-
     <%= form.submit  'Crear', :class => "btn btn-primary" %>
 
 <% end %>

@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1>People</h1>
-
+<%= link_to 'NUEVA PERSONA', new_person_path, class:"btn btn-success" %>
+<p>
 <table class="w3-table-all">
   <thead>
     <tr>
@@ -9,9 +10,7 @@
       <th>Surname</th>
       <th>Address</th>
       <th>Mail</th>
-      <th>Point</th>
-      <th>Won fight</th>
-      <th>Lost fight</th>
+   
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,12 +22,7 @@
         <td><%= person.surname %></td>
         <td><%= person.address %></td>
         <td><%= person.mail %></td>
-        <td><%= person.point %></td>
-        <td><%= person.won_fight %></td>
-        <td><%= person.lost_fight %></td>
-        <td><%= link_to 'Show', person %></td>
         <td><%= link_to 'Edit', edit_person_path(person) %></td>
-        <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -37,4 +31,4 @@
 
 <br>
 
-<%= link_to 'New Person', new_person_path %>
+

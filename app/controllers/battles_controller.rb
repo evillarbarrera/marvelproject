@@ -33,6 +33,7 @@ class BattlesController < ApplicationController
     @battle.date_fight = Battle.fecha
    
 
+
     respond_to do |format|
       if @battle.save
         format.html { redirect_to @battle, notice: 'Battle was successfully created.' }
@@ -58,6 +59,7 @@ class BattlesController < ApplicationController
     end
   end
 
+
   # DELETE /battles/1
   # DELETE /battles/1.json
   def destroy
@@ -78,4 +80,7 @@ class BattlesController < ApplicationController
     def battle_params
       params.require(:battle).permit(:people_id)
     end
+
+ 
+
 end

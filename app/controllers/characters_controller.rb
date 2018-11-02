@@ -11,10 +11,10 @@ class CharactersController < ApplicationController
       offsetCal = 0
       @numeroPag  = 1
     end
-    response = Character.getDataMarvel(offsetCal, 18)
+    response = Character.getDataMarvel(offsetCal, 40)
   
     if response.code == 200
-      cantPag = response.parsed_response['data']['total'] / 18
+      cantPag = response.parsed_response['data']['total'] / 30
       if cantPag % 2 == 0
        @paginas = cantPag +1
       else

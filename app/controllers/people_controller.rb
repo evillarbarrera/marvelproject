@@ -25,7 +25,7 @@ class PeopleController < ApplicationController
   # POST /people.json
   def create
     @person = Person.new(person_params)
-
+    
     respond_to do |format|
       if @person.save
         format.html { redirect_to @person, notice: 'Person was successfully created.' }
@@ -51,6 +51,8 @@ class PeopleController < ApplicationController
     end
   end
 
+
+
   # DELETE /people/1
   # DELETE /people/1.json
   def destroy
@@ -69,6 +71,8 @@ class PeopleController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def person_params
-      params.require(:person).permit(:name, :surname, :address, :mail, :point, :won_fight, :lost_fight)
+      params.require(:person).permit(:name, :surname, :address, :mail)
     end
+
+  
 end
