@@ -5,7 +5,7 @@ class CreatePeople < ActiveRecord::Migration[5.2]
       t.string :surname
       t.string :address
       t.string :mail
-      t.integer :point
+      t.integer :point, :default => 0
       t.integer :won_fight, :default => 0
       t.integer :lost_fight , :default => 0
 
