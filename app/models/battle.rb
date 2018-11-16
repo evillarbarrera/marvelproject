@@ -31,13 +31,13 @@ class Battle < ApplicationRecord
 		people = Person.find(self.people_id)
 		
 		if Battle.resultado
-			won = people.won_fight
-			lost = people.lost_fight + 1 
-			point = people.point - 1
-		else
-			won = people.won_fight + 1
-			lost = people.lost_fight
-			point = people.point + 1
+				won = people.won_fight
+				lost = people.lost_fight + 1 
+				point = people.point - 1
+			else
+				won = people.won_fight + 1
+				lost = people.lost_fight
+				point = people.point + 1
 		end
 
     people.update!(point: point, won_fight: won, lost_fight: lost )
