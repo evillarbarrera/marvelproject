@@ -21,9 +21,9 @@ class Character < ApplicationRecord
   def self.saveData
     #Para saber si contiene datos y si los posee los borra
     tabla = Character.count
-   # if tabla > 0
-   #  Character.delete_all
-   # end
+      if tabla > 0
+          Character.delete_all
+      end
     datos = []
     fin = getCantidadCharacter
     inicio = 0
@@ -35,12 +35,12 @@ class Character < ApplicationRecord
         inicio = inicio +100
       end    
       if tabla < 0
-      datos.each do |single|
-        character = Character.new
-        character.code = single['id']
-        character.name = single['name']
-        character.save
-      end
+        datos.each do |single|
+          character = Character.new
+          character.code = single['id']
+          character.name = single['name']
+          character.save
+        end
     end
    
   end
