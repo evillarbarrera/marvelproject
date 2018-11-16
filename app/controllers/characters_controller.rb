@@ -54,29 +54,6 @@ class CharactersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /characters/1
-  # PATCH/PUT /characters/1.json
-  def update
-    respond_to do |format|
-      if @character.update(character_params)
-        format.html { redirect_to @character, notice: 'Character was successfully updated.' }
-        format.json { render :show, status: :ok, location: @character }
-      else
-        format.html { render :edit }
-        format.json { render json: @character.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /characters/1
-  # DELETE /characters/1.json
-  def destroy
-    @character.destroy
-    respond_to do |format|
-      format.html { redirect_to characters_url, notice: 'Character was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
 
   def details
     response = Character.getCharacter(params[:code])

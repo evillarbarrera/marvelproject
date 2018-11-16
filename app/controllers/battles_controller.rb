@@ -32,8 +32,6 @@ class BattlesController < ApplicationController
     @battle.characters_id = Battle.getCharacterBattle
     @battle.date_fight = Battle.fecha
    
-
-
     respond_to do |format|
       if @battle.save
         format.html { redirect_to @battle, notice: 'Battle was successfully created.' }
@@ -45,30 +43,6 @@ class BattlesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /battles/1
-  # PATCH/PUT /battles/1.json
-  def update
-    respond_to do |format|
-      if @battle.update(battle_params)
-        format.html { redirect_to @battle, notice: 'Battle was successfully updated.' }
-        format.json { render :show, status: :ok, location: @battle }
-      else
-        format.html { render :edit }
-        format.json { render json: @battle.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-
-  # DELETE /battles/1
-  # DELETE /battles/1.json
-  def destroy
-    @battle.destroy
-    respond_to do |format|
-      format.html { redirect_to battles_url, notice: 'Battle was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

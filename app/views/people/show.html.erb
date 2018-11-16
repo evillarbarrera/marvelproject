@@ -1,39 +1,25 @@
-<p id="notice"><%= notice %></p>
-
+<p id="notice" class="form-group"><%= notice %></p>
+ 
 <p>
-  <strong>Name:</strong>
+  <strong>NOMBRE:</strong>
   <%= @person.name %>
 </p>
 
 <p>
-  <strong>Surname:</strong>
+  <strong>APELLIDO:</strong>
   <%= @person.surname %>
 </p>
 
 <p>
-  <strong>Address:</strong>
+  <strong>DIRECCION:</strong>
   <%= @person.address %>
 </p>
 
 <p>
-  <strong>Mail:</strong>
+  <strong>EMAIL:</strong>
   <%= @person.mail %>
 </p>
 
-<p>
-  <strong>Point:</strong>
-  <%= @person.point %>
-</p>
-
-<p>
-  <strong>Won fight:</strong>
-  <%= @person.won_fight %>
-</p>
-
-<p>
-  <strong>Lost fight:</strong>
-  <%= @person.lost_fight %>
-</p>
 
 <%= link_to 'Edit', edit_person_path(@person) %> |
 <%= link_to 'Back', people_path %>
